@@ -38,21 +38,23 @@ function printTasks() {
 
         if(j < taskList.length) {
             divContent += 
-            `<div class="row pb-3 center">
+            `<div class="row pb-3">
                 <div class="col-6">
                     <div class="card">
                         <div class="card-body">
-                            <p>${title} - ${desc}</p>
+                        <div class="bg-warning w-100 h-100"><p class="text-center">${title}</p></div>
+                            <p>- ${desc} </p>
                         </div>
                     </div>
                 </div>`
             title = taskList[j].title;
             desc = taskList[j].text;
             divContent += 
-                `<div class="col-6 lign-middle">
+                `<div class="col-6">
                     <div class="card h-100">
                         <div class="card-body">
-                            <p>${title} - ${desc}</p>
+                            <div class="bg-warning w-100 h-100"><p class="text-center">${title}</p></div>
+                            <p>- ${desc} </p>
                         </div>
                     </div>
                 </div>`;
@@ -61,7 +63,8 @@ function printTasks() {
             divContent +=`<div class="col-6">
             <div class="card">
                 <div class="card-body">
-                    <p>${title} - ${desc}</p>
+                <div class="bg-warning w-100 h-100"><p class="text-center">${title}</p></div>
+                    <p>- ${desc} </p>
                 </div>
             </div>
         </div>`
