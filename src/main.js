@@ -85,29 +85,8 @@ function deleteTask(taskID) {
 }
 
 function markAsComplete(i) {
-    //let completeButton = document.getElementById(`combtn-${i}`);
     let taskList = JSON.parse(localStorage.getItem('taskList'));
     taskList[i].completed = !taskList[i].completed;
-    /*var classToRemove = "";
-    var classToAdd = "";
-    if(taskList[i].completed) {
-        classToAdd = 'btn-warning';
-        classToRemove = "btn-success";
-        completeButton.innerHTML = "Not completed";
-        if (completeButton.classList.contains(classToRemove)) {
-            completeButton.classList.toggle(classToRemove);
-            completeButton.classList.add(classToAdd);
-        }
-    }
-    else {
-        classToAdd = 'btn-success';
-        classToRemove = "btn-warning";
-        completeButton.innerHTML = "Not completed";
-        if (completeButton.classList.contains(classToRemove)) {
-            completeButton.classList.toggle(classToRemove);
-            completeButton.classList.add(classToAdd);
-        }
-    }*/
     localStorage.setItem('taskList', JSON.stringify(taskList));
     printTasks();
 }
