@@ -37,8 +37,8 @@ function printTasks() {
         j = i + 1;
 
         if(j < taskList.length) {
-            divContent += 
-            `<div class="row pb-3">
+            divContent += printFullRow(taskList, i);
+            /*`<div class="row pb-3">
                 <div class="col-6">
                     <div class="card">
                         <div class="card-body">
@@ -57,19 +57,52 @@ function printTasks() {
                             <p>- ${desc} </p>
                         </div>
                     </div>
-                </div>`;
+                </div>`;*/
         }
         else {
-            divContent +=`<div class="col-6">
+            divContent += printTaskCol(taskList, i);
+            /*`<div class="col-6">
             <div class="card">
                 <div class="card-body">
-                <div class="bg-warning w-100 h-100"><p class="text-center">${title}</p></div>
+                    <div class="bg-warning w-100 h-100">
+                        <p class="text-center">${title}</p>
+                    </div>
                     <p>- ${desc} </p>
                 </div>
             </div>
-        </div>`
+        </div>`*/
         }
         taskDiv.innerHTML += divContent;   
     }
 }
+
+function printFullRow(taskList, i) {
+    let result = `<div class="row pb-3">`;
+    result += printTaskCol(taskList, i);
+    result += printTaskCol(taskList, i + 1);
+    result += `</div>`;
+    return result;
+    
+}
+
+function printTaskCol(taskList, i) {
+    let result = 
+    `<div class="col-6">
+        <div class="card">
+            <div class="card-body">
+                <div class="bg-warning w-100 h-100">
+                    <p class="text-center">${taskList[i].title}</p>
+                </div>
+                <div>
+                    <p>- ${taskList[i].text} </p>
+                </div>
+                <div class="options row">
+
+                </div>
+            </div>
+        </div>
+    </div>`;
+    return result;
+}
+
 printTasks();
